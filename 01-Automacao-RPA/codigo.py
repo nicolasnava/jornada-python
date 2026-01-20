@@ -10,35 +10,35 @@
 
 import pyautogui
 import time 
-# pyautogui.click -> clicar
+import pandas as pd
+# pyautogui.click -> clicar (varia conforme monitor)
 # pyautogui.write -> digitar
 # pyautogui.press -> pressionar
 # pyautogui.hotkey -> atalho_teclado
+# pyautogui.scroll -> rolar_tela
+
 
 pyautogui.PAUSE = 1  # Tempo de espera entre as acoes   
 link = "https://dlp.hashtagtreinamentos.com/python/intensivao/login"
 
 # Passo 1 : Entra Sistema Empresa
 pyautogui.press("win")  # Abre o menu iniciar
-pyautogui.write("brave")  # Digita o nome do navegador
+pyautogui.write("brave")  # Digita o nome do navegador(Eu uso o Brave)
 pyautogui.press("enter")  # Pressiona enter para abrir o navegador
 time.sleep(2)  # Espera o navegador abrir
 
-# entrar no link 
+# Passo 2 : Acessa o sistema
 pyautogui.write(link)  # Digita o endereco do sistema
 pyautogui.press("enter")  # Pressiona enter
 time.sleep(2)  # Espera a pagina carregar
 
-# Passo 2 : Fazer Login 
+# Passo 3 : Fazer Login 
 pyautogui.click(x=409, y=403) # Clica no campo de email
 pyautogui.write("nicolasnava@gmail.com")  # Digita o email
 pyautogui.press("tab")  # Passa para o campo de senha
 pyautogui.write("1234")  # Digita a senha
 pyautogui.click(x=667, y=562)  # Clica no botao de login
-
-
-#install pandas openpyxl
-import pandas as pd
+time.sleep(2)  # Espera o sistema carregar
 
 
 # Passo 4 : Cadastrar Produto
